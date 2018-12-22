@@ -1,0 +1,81 @@
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("2.jpg");
+
+  /* Full height */
+  height: 600px;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.subscriber,
+.publisher {
+  float: left;
+  border: 1px solid black;
+  width: 300px;
+  padding: 10px;
+}
+
+.textbox-btn {
+  width: 500px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #d0ffef;
+  font-weight: bold;
+}
+
+.textbox-btn input {
+  position: relative;
+  left: 58%;
+  width: 50%;
+  height: 8%;
+  display: inline-block;
+}
+
+.textbox-btn button {
+  position: relative;
+  left: 62%;
+  top: 50%;
+  width: 24%;
+  color: black;
+  background-color: royalblue;
+}
+
+.h {
+  text-align: center;
+  width: 680px;
+  color: #d0ffef;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: rgba(5, 98, 76, 0.5);
+}
+.h2 {
+  text-align: center;
+
+  width: 200px;
+  color: #d0ffef;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.h div:hover {
+  transform: scale(1.5);
+}
+
+.ribbon {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  width: 380px;
+  height: 280px;
+}

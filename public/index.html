@@ -1,0 +1,87 @@
+<link
+  rel="stylesheet"
+  href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" type="text/css" href="./css/main.css">
+<div class="bg">
+	
+	<h1 class="h"  style="color:salmon; margin-left: 25%; margin-top: 1%" >  PUB-SUB DISTRIBUTED SYSTEM </h1>
+  <h2 class="h2" style="color:whitesmoke; margin-left: 22%;margin-top: 5%">Publishers</h2>
+
+  <div id="pub-addition" class="textbox-btn">
+
+    
+      <input style= "background-color:peachpuff" type="text" class="form-control" placeholder="Name of Publisher" />
+      <button class="btn btn-default">Add</button>
+      <button class="btn btn-default">Remove</button>
+    </div>
+
+    <div id="publisher-list">
+      {{#publishers}}
+      <div class="publisher">
+        <h4>{{ name }}</h4>
+        <input style= "background-color:dodgerblue" type="text" class="form-control" placeholder="Topic" />
+        <textarea style= "background-color:lightblue" class="form-control" placeholder="Content"></textarea>
+        <button class="btn btn-default">Publish</button>
+
+        <ul>
+          {{#works}}
+          <li>
+            <b>{{ topic }}</b
+            ><br />
+            {{ payload }}
+          </li>
+          {{/works}}
+        </ul>
+      </div>
+      {{/publishers}} <br style="clear:both" />
+    </div>
+
+    <h2 class="h2" style="color:whitesmoke; margin-left: 22%;">Subscribers</h2>
+
+    <div id="sub-addition" class="textbox-btn">
+     
+        <input style= "background-color:peachpuff" type="text" class="form-control" placeholder="Name of Subscriber" />
+        <button class="btn btn-default">Add</button>
+        <button class="btn btn-default">UNSUBSCRIBE</button>
+      </div>
+	  <div id="content">
+			<img  src="./css/Capture.jpg" class="ribbon"/>
+			
+		</div>
+      <div id="subscriber-list">
+        {{#subscribers}}
+        <div class="subscriber">
+          <h4>{{ name }}</h4>
+          <input style= "background-color:dodgerblue" type="text" class="form-control" placeholder="Add Topic" />
+          <button class="btn btn-default">Subscribe</button>
+          <h6>Following</h6>
+          <ul class="topics">
+            {{#topics}}
+            <li>{{.}} {{/topics}}</li>
+          </ul>
+
+          <h6>Notifications</h6>
+          <ul class="notifications">
+            {{#notifications}}
+            <li>
+              <b>{{ topic }}: </b>{{ payload }} - <i>{{ name }}</i>
+              {{/notifications}}
+              <!--
+                {{^notifications}} <b> All caught up! :) </b> {{/notifications}}
+              -->
+            </li>
+          </ul>
+        </div>
+        {{/subscribers}} <br style="clear:both" />
+      </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/mustache/mustache.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/pubsub.js"></script>
+    <script src="./js/scripts.js"></script>
+  </div>
+  
+</div>
